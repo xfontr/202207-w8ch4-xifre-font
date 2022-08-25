@@ -1,6 +1,3 @@
-import robotNames from "../data/robotNames";
-import verifyName from "./verifyName";
-
 const range = {
   min: 0,
   max: 9,
@@ -41,39 +38,17 @@ export const randomLetterGenerator = (): string =>
 export const randomNumberGenerator = (): number =>
   Math.floor(Math.random() * (range.max - range.min + 1) + range.min);
 
-export const assignRandomCharacter = (numbersLeft: number): string | number => {
-  if (numbersLeft === 0) {
-    return randomLetterGenerator();
-  }
+export const composeName = (): (string | number)[] => {
+  const composedName = new Array(5).fill("");
 
-  const option = Math.floor(Math.random() * 2 + 1);
-
-  if (option === 1) {
-    return randomLetterGenerator();
-  }
-
-  return randomNumberGenerator();
+  const finalComposition = composedName.map((character, index) =>
+    index < 2 ? randomNumberGenerator() : randomLetterGenerator()
+  );
+  return finalComposition;
 };
 
 export const nameGenerator = (): string => {
-  let robotName: string;
-  let numbersLeft: number;
-
-  const createName = () => {
-    robotName = "";
-    numbersLeft = 2;
-
-    do {
-      robotName = `${robotName}${assignRandomCharacter(numbersLeft)}`;
-      numbersLeft -= 1;
-    } while (robotName.length < 5);
-  };
-
-  do {
-    createName();
-  } while (verifyName(robotName));
-
-  robotNames.push(robotName);
-
-  return robotName;
+  const protoName = composeName().sort(() => 0.5 - Math.random());
+  const finalName = protoName.toString().replaceAll(",", "");
+  return finalName;
 };

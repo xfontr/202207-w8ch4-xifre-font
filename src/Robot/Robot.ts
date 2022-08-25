@@ -9,13 +9,17 @@ class Robot implements IRobot {
   type: RobotTypes;
   battery: MaxOneHundred = 100;
   message: RobotMessages;
-  reset: () => {};
-  work: () => {};
+  work: () => void;
 
   constructor(type: RobotTypes) {
     this.name = nameGenerator();
     this.type = type;
     this.message = messages[type];
+  }
+
+  reset(): void {
+    this.name = nameGenerator();
+    this.battery = 100;
   }
 }
 

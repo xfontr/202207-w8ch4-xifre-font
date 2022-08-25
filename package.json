@@ -9,7 +9,7 @@
     "start": "node .",
     "start:dev": "nodemon -q",
     "prepare": "husky install",
-    "test": "jest src --passWithNoTests --watchAll=false"
+    "test": "jest src --watchAll=false"
   },
   "keywords": [],
   "author": "",

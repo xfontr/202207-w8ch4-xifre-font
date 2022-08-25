@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "ts": "tsc",
+    "build": "npm run ts",
     "ts:dev": "tsc -w",
     "start": "node .",
     "start:dev": "nodemon -q",
@@ -35,5 +36,8 @@
   "dependencies": {
     "debug": "^4.3.4",
     "dotenv": "^16.0.1"
+  },
+  "engines": {
+    "node": "^18.x"
   }
 }

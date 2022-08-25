@@ -1,5 +1,3 @@
-Los robots que salen de la fábrica deben llevar los siguientes datos:
-
 ### DATA LAYER
 
 [ROBOT]
@@ -32,8 +30,6 @@ Los robots que salen de la fábrica deben llevar los siguientes datos:
 - Work: console log a message that each type says.
 
 **Extra features**
-
-Cuando un robot ha sido creado, su batería empieza a reducirse a razón de 1 punto por segundo. Cuando le quede un 10%, debe imprimir por consola un mensaje avisándolo. Cuando se agote del todo debe imprimir otro mensaje avisándolo. Un robot con la batería agotada no puede ejecutar su trabajo.
 
 Asegúrate de que no se crean dos robots con el mismo nombre.
 

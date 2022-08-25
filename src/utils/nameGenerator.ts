@@ -1,3 +1,6 @@
+import robotNames from "../data/robotNames";
+import verifyName from "./verifyName";
+
 const range = {
   min: 0,
   max: 9,
@@ -53,13 +56,24 @@ export const assignRandomCharacter = (numbersLeft: number): string | number => {
 };
 
 export const nameGenerator = (): string => {
-  let robotName = "";
-  let numbersLeft = 2;
+  let robotName: string;
+  let numbersLeft: number;
+
+  const createName = () => {
+    robotName = "";
+    numbersLeft = 2;
+
+    do {
+      robotName = `${robotName}${assignRandomCharacter(numbersLeft)}`;
+      numbersLeft -= 1;
+    } while (robotName.length < 5);
+  };
 
   do {
-    robotName = `${robotName}${assignRandomCharacter(numbersLeft)}`;
-    numbersLeft -= 1;
-  } while (robotName.length < 5);
+    createName();
+  } while (verifyName(robotName));
+
+  robotNames.push(robotName);
 
   return robotName;
 };

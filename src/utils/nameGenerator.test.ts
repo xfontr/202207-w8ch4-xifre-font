@@ -1,4 +1,5 @@
 import {
+  composeName,
   nameGenerator,
   randomLetterGenerator,
   randomNumberGenerator,
@@ -37,24 +38,16 @@ describe("Given a randomNumberGenerator function", () => {
   });
 });
 
-// describe("Given a assignRandomCharacter function", () => {
-//   describe("When called with a number 1 as an argument", () => {
-//     test("Then it should return either a string or a number", () => {
-//       const randomNumber = 1;
-//       const result = assignRandomCharacter(randomNumber);
+describe("Given a composeName function", () => {
+  describe("When called", () => {
+    test("It should return an array with 2 numbers and 3 string characters", () => {
+      const result = composeName();
 
-//       expect(typeof result === "number" || typeof result === "string").toBe(
-//         true
-//       );
-//     });
-//   });
-
-//   describe("When called wiht a numbner 0 as an argument", () => {
-//     test("Then it should return a letter", () => {
-//       const randomNumber = 0;
-//       const result = assignRandomCharacter(randomNumber);
-
-//       expect(typeof result === "string").toBe(true);
-//     });
-//   });
-// });
+      expect(typeof result[0]).toBe("number");
+      expect(typeof result[1]).toBe("number");
+      expect(typeof result[2]).toBe("string");
+      expect(typeof result[3]).toBe("string");
+      expect(typeof result[4]).toBe("string");
+    });
+  });
+});

@@ -7,3 +7,5 @@ const cleaner = new Cleaner();
 const developer = new Developer();
 
 const waiter = new Waiter();
+
+export { cleaner, developer, waiter };

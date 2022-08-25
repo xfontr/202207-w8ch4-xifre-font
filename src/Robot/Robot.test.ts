@@ -47,14 +47,14 @@ describe("Given a Robot class", () => {
     test("Then, after 90 seconds, the robot should send a warning message", () => {
       const robotType = "developer";
       const robot = new Robot(robotType);
+      const expectedLowBattery = 0;
+      const originalWork = robot.work;
 
-      const robotInitialBattery = robot.battery;
-      const robotExpectedBattery = 95;
+      expect(robot.work).toBe(originalWork);
+      jest.advanceTimersByTime(100000);
 
-      jest.advanceTimersByTime(5000);
-
-      expect(robot.battery).not.toBe(robotInitialBattery);
-      expect(robot.battery).toBe(robotExpectedBattery);
+      expect(robot.battery).toBe(expectedLowBattery);
+      expect(robot.work).not.toBe(originalWork);
     });
   });
 });

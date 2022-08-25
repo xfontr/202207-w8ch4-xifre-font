@@ -32,8 +32,8 @@ describe("Given a randomNumberGenerator function", () => {
       const result = randomNumberGenerator();
 
       expect(Number.isNaN(result)).toBe(false);
-      expect(result > 0).toBe(true);
-      expect(result < 9).toBe(true);
+      expect(result >= 0).toBe(true);
+      expect(result < 10).toBe(true);
     });
   });
 });

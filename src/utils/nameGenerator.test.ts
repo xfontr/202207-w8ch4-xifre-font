@@ -49,4 +49,13 @@ describe("Given a assignRandomCharacter function", () => {
       );
     });
   });
+
+  describe("When called wiht a numbner 0 as an argument", () => {
+    test("Then it should return a letter", () => {
+      const randomNumber = 0;
+      const result = assignRandomCharacter(randomNumber);
+
+      expect(typeof result === "string").toBe(true);
+    });
+  });
 });

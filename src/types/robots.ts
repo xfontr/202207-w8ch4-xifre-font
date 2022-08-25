@@ -1,3 +1,5 @@
+import MaxOneHundred from "./MaxOneHundred";
+
 export type RobotTypes = "cleaner" | "waiter" | "developer";
 
 export type RobotMessages =
@@ -8,7 +10,7 @@ export type RobotMessages =
 interface RobotData {
   name: string;
   type: RobotTypes;
-  battery: number;
+  battery: MaxOneHundred;
   message: RobotMessages;
 }
 

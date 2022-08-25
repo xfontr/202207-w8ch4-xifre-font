@@ -1,4 +1,4 @@
-export type RobotTypes = "Cleaner" | "Waiter" | "Developer";
+export type RobotTypes = "cleaner" | "waiter" | "developer";
 
 export type RobotMessages =
   | "Larala larita, I clean my little house"

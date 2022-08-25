@@ -35,8 +35,6 @@ Los robots que salen de la fábrica deben llevar los siguientes datos:
 
 Cuando un robot ha sido creado, su batería empieza a reducirse a razón de 1 punto por segundo. Cuando le quede un 10%, debe imprimir por consola un mensaje avisándolo. Cuando se agote del todo debe imprimir otro mensaje avisándolo. Un robot con la batería agotada no puede ejecutar su trabajo.
 
-Cada robot tendrá un método llamado work, y dependiendo de su tipo hará una cosa u otra:
-
 Asegúrate de que no se crean dos robots con el mismo nombre.
 
 Tu código debe tener una función createRobot que devuelva un robot recién creado. A dicha función se le pasará un tipo de robot.

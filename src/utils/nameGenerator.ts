@@ -3,7 +3,7 @@ const range = {
   max: 9,
 };
 
-const alphabet = [
+export const alphabet = [
   "a",
   "b",
   "c",
@@ -32,18 +32,18 @@ const alphabet = [
   "z",
 ];
 
-const randomLetterGenerator = (): string =>
-  alphabet[Math.floor(Math.random() * 25)].toUpperCase();
+export const randomLetterGenerator = (): string =>
+  alphabet[Math.floor(Math.random() * 26)].toUpperCase();
 
-const randomNumberGenerator = (): number =>
+export const randomNumberGenerator = (): number =>
   Math.floor(Math.random() * (range.max - range.min + 1) + range.min);
 
-const assignRandomCharacter = (numbersLeft: number): string | number => {
+export const assignRandomCharacter = (numbersLeft: number): string | number => {
   if (numbersLeft === 0) {
     return randomLetterGenerator();
   }
 
-  const option = Math.floor(Math.random() * 2);
+  const option = Math.floor(Math.random() * 2 + 1);
 
   if (option === 1) {
     return randomLetterGenerator();
@@ -52,16 +52,14 @@ const assignRandomCharacter = (numbersLeft: number): string | number => {
   return randomNumberGenerator();
 };
 
-const nameGenerator = (): string => {
-  let robotName: string;
+export const nameGenerator = (): string => {
+  let robotName = "";
   let numbersLeft = 2;
 
   do {
     robotName = `${robotName}${assignRandomCharacter(numbersLeft)}`;
     numbersLeft -= 1;
-  } while (robotName.length > 0);
+  } while (robotName.length < 5);
 
   return robotName;
 };
-
-export default nameGenerator;

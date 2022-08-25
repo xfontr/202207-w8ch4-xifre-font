@@ -3,6 +3,7 @@ import Debug from "debug";
 import Developer from "./RobotTypes/Developer";
 import Waiter from "./RobotTypes/Waiter";
 import Cleaner from "./RobotTypes/Cleaner";
+import robotNames from "./data/robotNames";
 
 const debug = Debug("robots:index");
 
@@ -18,3 +19,5 @@ developer.work();
 
 debug(`Created the robot ${waiter.name} as a ${waiter.type}`);
 waiter.work();
+
+debug(robotNames);

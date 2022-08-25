@@ -44,8 +44,9 @@ export const randomLetterGenerator = (): string =>
 export const randomNumberGenerator = (): number =>
   Math.floor(Math.random() * (range.max - range.min + 1) + range.min);
 
-const composeName = (): (string | number)[] => {
+export const composeName = (): (string | number)[] => {
   const composedName = new Array(5).fill("");
+
   const finalComposition = composedName.map((character, index) =>
     index < 2 ? randomNumberGenerator() : randomLetterGenerator()
   );

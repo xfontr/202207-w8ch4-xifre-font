@@ -1,5 +1,4 @@
 import {
-  assignRandomCharacter,
   nameGenerator,
   randomLetterGenerator,
   randomNumberGenerator,
@@ -38,24 +37,24 @@ describe("Given a randomNumberGenerator function", () => {
   });
 });
 
-describe("Given a assignRandomCharacter function", () => {
-  describe("When called with a number 1 as an argument", () => {
-    test("Then it should return either a string or a number", () => {
-      const randomNumber = 1;
-      const result = assignRandomCharacter(randomNumber);
+// describe("Given a assignRandomCharacter function", () => {
+//   describe("When called with a number 1 as an argument", () => {
+//     test("Then it should return either a string or a number", () => {
+//       const randomNumber = 1;
+//       const result = assignRandomCharacter(randomNumber);
 
-      expect(typeof result === "number" || typeof result === "string").toBe(
-        true
-      );
-    });
-  });
+//       expect(typeof result === "number" || typeof result === "string").toBe(
+//         true
+//       );
+//     });
+//   });
 
-  describe("When called wiht a numbner 0 as an argument", () => {
-    test("Then it should return a letter", () => {
-      const randomNumber = 0;
-      const result = assignRandomCharacter(randomNumber);
+//   describe("When called wiht a numbner 0 as an argument", () => {
+//     test("Then it should return a letter", () => {
+//       const randomNumber = 0;
+//       const result = assignRandomCharacter(randomNumber);
 
-      expect(typeof result === "string").toBe(true);
-    });
-  });
-});
+//       expect(typeof result === "string").toBe(true);
+//     });
+//   });
+// });

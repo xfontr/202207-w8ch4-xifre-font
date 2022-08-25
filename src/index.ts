@@ -17,8 +17,8 @@ const robots = {
 const createRobot = (type: RobotTypes) => robots[type]();
 
 Object.keys(robots).forEach((robotType) => {
-  createRobot(`${robotType}` as RobotTypes);
-  debug(`Created a robot ${robotType}`);
+  const newRobot = createRobot(`${robotType}` as RobotTypes);
+  debug(`Created a robot ${robotType} with name ${newRobot.name}`);
 });
 
 export default createRobot;

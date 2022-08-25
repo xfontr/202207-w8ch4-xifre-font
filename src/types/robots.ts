@@ -5,14 +5,18 @@ type RobotMessages =
   | "Do you feel like a mini of fuet?"
   | "JavaScript is cool - I develop with JavaScript -> I'm cool";
 
-export interface ProtoRobot {
+interface RobotData {
   name: string;
   type: RobotTypes;
   battery: number;
   message: RobotMessages;
 }
 
-export interface IRobot extends ProtoRobot {
+interface RobotActions {
   reset: () => void;
   work: () => void;
 }
+
+interface IRobot extends RobotActions, RobotData {}
+
+export default IRobot;

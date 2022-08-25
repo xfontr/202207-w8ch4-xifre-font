@@ -17,6 +17,24 @@ class Robot implements IRobot {
     this.name = nameGenerator();
     this.type = type;
     this.message = messages[type];
+
+    const batteryDraining = setInterval(() => {
+      this.battery -= 1;
+      if (this.battery === 0) {
+        clearInterval(batteryDraining);
+      }
+      switch (this.battery) {
+        case 10:
+          debug("I'm about to run out of battery (only 10% left)");
+          break;
+        case 0:
+          this.work = () => {};
+          clearInterval(batteryDraining);
+          break;
+        default:
+          break;
+      }
+    }, 1000);
   }
 
   reset(): void {
